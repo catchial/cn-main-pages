@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>易倍体育 · 一眼识别，一站知悉</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+      background: #fafaf9;
+      color: #1c1917;
+      line-height: 1.7;
+      padding: 2.4rem 1.2rem 3.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .page {
+      max-width: 680px;
+      width: 100%;
+    }
+    /* 叙事节奏：开场短句 */
+    .opening {
+      margin-top: 1.6rem;
+      margin-bottom: 2.8rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.01em;
+      color: #44403c;
+    }
+    .opening span {
+      display: inline-block;
+      background: #ede9d9;
+      padding: 0 0.3rem;
+      font-weight: 420;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 480;
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      color: #292524;
+    }
+    .sub {
+      margin-top: -0.4rem;
+      margin-bottom: 2.4rem;
+      color: #57534e;
+      font-size: 1rem;
+      border-left: 3px solid #c0b9a8;
+      padding-left: 1rem;
+    }
+    /* 承接段落 */
+    .context {
+      margin-bottom: 2.8rem;
+      font-size: 1.05rem;
+    }
+    .context p {
+      margin-bottom: 1.2rem;
+    }
+    .context a {
+      color: #1f2937;
+      text-decoration: underline;
+      text-decoration-color: #cbd5e1;
+      text-underline-offset: 4px;
+      font-weight: 450;
+      transition: text-decoration-color 0.2s;
+    }
+    .context a:hover {
+      text-decoration-color: #78716c;
+    }
+    /* 特点列表 —— 卡片极简 */
+    .feature-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      margin: 2.6rem 0 3rem;
+    }
+    .feature-item {
+      background: #ffffff;
+      border: 1px solid #e7e5e4;
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      transition: box-shadow 0.25s ease;
+    }
+    .feature-item:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03), 0 0 0 1px #d6d3d1;
+    }
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      color: #292524;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+    .feature-item h3::before {
+      content: "·";
+      color: #a8a29e;
+      font-weight: 300;
+      font-size: 1.3rem;
+      margin-right: 0.2rem;
+    }
+    .feature-item p {
+      color: #57534e;
+      font-size: 0.96rem;
+      margin-left: 1.2rem;
+    }
+    /* 温和结尾 与 FAQ 摘要 */
+    .closing {
+      margin-top: 2rem;
+      padding: 1.6rem 0;
+      border-top: 1px solid #e3dfd8;
+      font-size: 0.98rem;
+      color: #44403c;
+    }
+    .faq-note {
+      background: #f3f1ec;
+      border-radius: 20px;
+      padding: 1.4rem 1.6rem;
+      margin: 2.4rem 0 1.6rem;
+    }
+    .faq-note summary {
+      font-weight: 470;
+      cursor: pointer;
+      color: #292524;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .faq-note summary::-webkit-details-marker { display: none; }
+    .faq-note summary::before {
+      content: "↴";
+      font-size: 1.2rem;
+      color: #a8a29e;
+      transition: transform 0.25s;
+    }
+    .faq-note[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .faq-note p {
+      margin-top: 0.8rem;
+      font-size: 0.95rem;
+      color: #57534e;
+      padding-left: 0.8rem;
+      border-left: 2px solid #d6d3d1;
+    }
+    .footer-note {
+      margin-top: 2.8rem;
+      font-size: 0.85rem;
+      color: #a8a29e;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e7e5e4;
+      margin: 1.6rem 0;
+    }
+    @media (max-width: 480px) {
+      body { padding: 1.6rem 1rem; }
+      h1 { font-size: 1.8rem; }
+      .feature-item { padding: 1.1rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- 开场短句 -->
+  <div class="opening">
+    <span>识别一个平台，有时只需一段连贯的叙述。</span>
+  </div>
+
+  <h1>易倍体育：<br>从名字读出它的用途</h1>
+  <div class="sub">—— 没有多余包装，功能藏在字面里</div>
+
+  <!-- 承接段落：从用户快速识别需求切入 -->
+  <div class="context">
+    <p>
+      当一个人第一次见到「易倍体育」四个字，大脑会不自觉地拆解：<strong>易</strong> 指向便捷、轻松；<strong>倍</strong> 暗示倍数、增益；而 <strong>体育</strong> 直接点明领域。这种命名方式让新访客在几秒内就能形成初步判断——它是一个围绕体育场景、提供某种增值服务的平台。相比那些需要翻阅“关于我们”才能理解定位的站点，这种直觉式命名节省了认知成本。
+    </p>
+    <p>
+      当然，名字只是索引。真正让用户决定停留的，是平台是否在体育内容、信息组织或功能设计上匹配他们的期待。在体育资讯、赛事动态或相关数据服务领域，<a href="https://m-yibeisport.com">易倍体育</a> 尝试将信息呈现与用户查找习惯对齐，让每一次浏览都更接近“找到所需”的状态。下文从几个侧面展开这个平台的结构特点。
+    </p>
+  </div>
+
+  <!-- 特点列表：克制、清晰 -->
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>频道导向的信息分区</h3>
+      <p>按照体育项目、赛程时段、热门联盟等维度组织内容，避免信息混排。用户可以通过直觉选择对应版块，减少无效点击。</p>
+    </div>
+    <div class="feature-item">
+      <h3>聚焦实时与近期</h3>
+      <p>首页与核心页面优先展示当下进行或即将开始的赛事，同时保留适当的历史数据入口，兼顾时效性与回溯需求。</p>
+    </div>
+    <div class="feature-item">
+      <h3>叙述而非罗列</h3>
+      <p>在赛事摘要、队伍介绍等模块中采用简短的背景说明，而非单纯的数据堆砌。这种处理方式对希望快速了解概况的用户更为友好。</p>
+    </div>
+    <div class="feature-item">
+      <h3>一致的视觉节奏</h3>
+      <p>页面采用统一的卡片间距、标题层级与配色逻辑，不同板块之间保持视觉连贯，降低跳出感。</p>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 —— 温和，不夸大 -->
+  <details class="faq-note">
+    <summary>一些常见的理解方向</summary>
+    <p>
+      很多体育爱好者会问：这个平台适合用来跟踪哪些赛事？从当前的结构看，它覆盖了足球、篮球、网球等主流项目，以及部分综合性赛事的简讯。不声称“最全”或“最快”，而是以清晰的方式呈现已有内容。如果你习惯先在主页浏览标题，再决定是否深入阅读，这种编排会自然贴合你的浏览路径。
+    </p>
+  </details>
+
+  <!-- 温和结尾 + 再次嵌入链接（自然） -->
+  <div class="closing">
+    <p>
+      一个网站是否值得回访，往往不取决于它有多少功能，而在于每次打开时，能否用最少的动作找到你关心的部分。<a href="https://m-yibeisport.com">易倍体育</a> 在这方面做了自己的取舍：将信息分层，把选择权交给用户。如果你恰好需要这样一个结构清晰的体育信息起点，不妨花几分钟逛逛它的页面布局——也许会发现一些符合你习惯的细节。
+    </p>
+  </div>
+
+  <hr>
+  <div class="footer-note">
+    基于公开信息梳理 · 不构成任何形式推荐
+  </div>
+</div>
+</body>
+</html>
